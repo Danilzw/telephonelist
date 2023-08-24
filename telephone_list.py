@@ -1,5 +1,6 @@
 import os
 
+# Function to clear console
 def clear_console():
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -10,13 +11,15 @@ while True:
 
     print("Добавить контакт", "|","Удалить контакт", "|","Вывести контакты", "|","Изменить контакт" ,"|","Закрыть программу","|")
     choice = int(input("                      Выберете(1,5):"))
+
+# Menu Function
     if(choice == 5):
         break
     if(choice == 1):
         clear_console()
         print("\nСемья","|","Друзья","|","Работа","|","Другое","|","Назад","|")
         group = int(input("Выберете группу(1,5):"))
-
+    #Add Function
         if(group == 5):
             clear_console()
         if(group == 1):
@@ -69,7 +72,8 @@ while True:
                 file.write(r" - " + number)
                 file.write("\n")
     
-
+    if(choice == 2):
+        
         
 
         
