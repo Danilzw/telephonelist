@@ -71,7 +71,7 @@ while True:
                 file.write( name)
                 file.write(r" - " + number)
                 file.write("\n")
-    
+    # Delete Function
     if(choice == 2):
         clear_console()
         print("\nСемья","|","Друзья","|","Работа","|","Другое","|","Назад","|")
@@ -125,9 +125,26 @@ while True:
             with open("groups/other.txt","w",encoding="utf-8") as file:
                 for i in arraytemp:
                     file.write(i)
-
+    #Read Function
     if(choice == 3):
+        clear_console()
+        print("\nСемья","|","Друзья","|","Работа","|","Другое","|","Назад","|")
+        group = int(input("Выберете группу(1,5):"))
+        if(group == 1):
+            with open("groups/family.txt","r",encoding="utf-8") as file:
+                print(file.read())
+        if(group == 2):
+            with open("groups/friends.txt","r",encoding="utf-8") as file:
+                print(file.read())
+        if(group == 3):
+            with open("groups/work.txt","r",encoding="utf-8") as file:
+                print(file.read())
+        if(group == 4):
+            with open("groups/other.txt","r",encoding="utf-8") as file:
+                print(file.read())
         
+
+
 
         
         
