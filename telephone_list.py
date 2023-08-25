@@ -33,8 +33,8 @@ while True:
                 stringvalue = str(counts)
                 file.write(stringvalue + ")")
                 file.write( name)
-                file.write(r" - " + number)
-                file.write("\n")
+                file.write(r" - " + number + "\n")
+                
         if(group == 2):
             with open("groups/friends.txt","r",encoding="utf=8") as file:
                 for line in file:
@@ -73,6 +73,62 @@ while True:
                 file.write("\n")
     
     if(choice == 2):
+        clear_console()
+        print("\nСемья","|","Друзья","|","Работа","|","Другое","|","Назад","|")
+        group = int(input("Выберете группу(1,5):"))
+
+        if(group == 1):
+            with open("groups/family.txt","r",encoding="utf-8") as file:
+                print(file.read())
+            arraytemp = []
+            id = int(input("Кого хотите удалить?(id):"))
+            with open("groups/family.txt","r",encoding="utf-8") as file2:
+                for line in file2:
+                    arraytemp.append(line)
+            del arraytemp[id]
+            with open("groups/family.txt","w",encoding="utf-8") as file:
+                for i in arraytemp:
+                    file.write(i)
+        if(group == 2):
+            with open("groups/friends.txt","r",encoding="utf-8") as file:
+                print(file.read())
+            arraytemp = []
+            id = int(input("Кого хотите удалить?(id):"))
+            with open("groups/friends.txt","r",encoding="utf-8") as file2:
+                for line in file2:
+                    arraytemp.append(line)
+            del arraytemp[id]
+            with open("groups/friends.txt","w",encoding="utf-8") as file:
+                for i in arraytemp:
+                    file.write(i)
+        if(group == 3):
+            with open("groups/work.txt","r",encoding="utf-8") as file:
+                print(file.read())
+            arraytemp = []
+            id = int(input("Кого хотите удалить?(id):"))
+            with open("groups/work.txt","r",encoding="utf-8") as file2:
+                for line in file2:
+                    arraytemp.append(line)
+            del arraytemp[id]
+            with open("groups/work.txt","w",encoding="utf-8") as file:
+                for i in arraytemp:
+                    file.write(i)
+        if(group == 4):
+            with open("groups/other.txt","r",encoding="utf-8") as file:
+                print(file.read())
+            arraytemp = []
+            id = int(input("Кого хотите удалить?(id):"))
+            with open("groups/other.txt","r",encoding="utf-8") as file2:
+                for line in file2:
+                    arraytemp.append(line)
+            del arraytemp[id]
+            with open("groups/other.txt","w",encoding="utf-8") as file:
+                for i in arraytemp:
+                    file.write(i)
+
+    if(choice == 3):
+        
+
         
         
 
